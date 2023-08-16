@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "prisma db push",
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve build",
