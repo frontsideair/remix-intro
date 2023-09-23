@@ -1,14 +1,18 @@
-import db from "../db.server";
+import db from "../db.server.ts";
 import { redirect, json } from "@remix-run/node";
-import type { ActionArgs, LoaderArgs } from "@remix-run/node";
+import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
 import {
   Form,
   useActionData,
   useLoaderData,
   useNavigation,
 } from "@remix-run/react";
-import PostContent from "components/PostContent";
+import PostContent from "components/PostContent.tsx";
 import { useId } from "react";
+
+export const meta: MetaFunction = () => {
+  return [{ title: "Post" }];
+};
 
 /** topics
   - action
@@ -27,9 +31,11 @@ export default function Post() {
     <main className="flex flex-col gap-4">
       <h2 className="text-xl font-bold">{post.title}</h2>
       <PostContent post={post} />
+      <hr />
       <Form method="POST">
         <fieldset disabled={state !== "idle"} className="disabled:opacity-50">
           <label>
+            Edit post
             <textarea
               aria-describedby={id}
               name="content"
@@ -53,7 +59,7 @@ export default function Post() {
   );
 }
 
-export async function loader({ params }: LoaderArgs) {
+export async function loader({ params }: DataFunctionArgs) {
   const post = await db.post.findUnique({
     where: {
       id: Number.parseInt(params.id!, 10),
@@ -67,7 +73,7 @@ export async function loader({ params }: LoaderArgs) {
   return { post };
 }
 
-export async function action({ params, request }: ActionArgs) {
+export async function action({ params, request }: DataFunctionArgs) {
   const { id } = params;
   const formData = await request.formData();
   const content = formData.get("content") as string;

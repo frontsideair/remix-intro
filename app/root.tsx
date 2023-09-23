@@ -9,17 +9,16 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import styles from "./style.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
+  return [{ rel: "stylesheet", href: "https://unpkg.com/bamboo.css" }];
 };
 
 export const meta: MetaFunction = () => {
-  return {
-    title: "Remix Starter",
-    description: "Welcome to remix!",
-  };
+  return [
+    { title: "Remix Starter" },
+    { name: "description", content: "Welcome to remix!" },
+  ];
 };
 
 /** topics

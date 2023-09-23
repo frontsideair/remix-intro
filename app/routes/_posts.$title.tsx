@@ -1,12 +1,14 @@
-import db from "../db.server";
-import { json, type LoaderArgs, type MetaFunction } from "@remix-run/node";
+import db from "../db.server.ts";
+import {
+  json,
+  type DataFunctionArgs,
+  type MetaFunction,
+} from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import PostContent from "components/PostContent";
+import PostContent from "components/PostContent.tsx";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  return {
-    title: data.title,
-  };
+  return [{ title: data?.title ?? "Posts" }];
 };
 
 /** topics
@@ -30,7 +32,7 @@ export default function Posts() {
   );
 }
 
-export async function loader({ params }: LoaderArgs) {
+export async function loader({ params }: DataFunctionArgs) {
   const posts = await db.post.findMany({
     where: {
       title: params.title,
