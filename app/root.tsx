@@ -9,9 +9,10 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import bamboo from "bamboo.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: "https://unpkg.com/bamboo.css" }];
+  return [{ rel: "stylesheet", href: bamboo }];
 };
 
 export const meta: MetaFunction = () => {
