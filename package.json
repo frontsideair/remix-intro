@@ -6,7 +6,7 @@
     "postinstall": "prisma db push",
     "build": "remix build",
     "dev": "remix dev",
-    "start": "remix-serve build",
+    "start": "remix-serve build/index.js",
     "seed": "prisma db seed",
     "typecheck": "tsc"
   },
@@ -36,7 +36,7 @@
     "seed": "tsx prisma/seed.ts"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=18.0.0"
   },
   "packageManager": "pnpm@8.7.5",
   "imports": {
