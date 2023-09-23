@@ -8,7 +8,8 @@
     "dev": "remix dev",
     "start": "remix-serve build/index.js",
     "seed": "prisma db seed",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint"
   },
   "dependencies": {
     "@prisma/client": "^5.1.1",
