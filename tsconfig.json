@@ -14,7 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"]
+      "#*": ["./*"]
     },
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,

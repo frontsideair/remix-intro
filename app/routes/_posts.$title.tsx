@@ -1,11 +1,11 @@
-import db from "../db.server.ts";
+import db from "#/app/db.server.ts";
 import {
   json,
   type DataFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import PostContent from "components/PostContent.tsx";
+import PostContent from "#/components/PostContent.tsx";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: data?.title ?? "Posts" }];

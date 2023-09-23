@@ -1,4 +1,4 @@
-import db from "../db.server.ts";
+import db from "#/app/db.server.ts";
 import { redirect, json } from "@remix-run/node";
 import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
 import {
@@ -7,7 +7,7 @@ import {
   useLoaderData,
   useNavigation,
 } from "@remix-run/react";
-import PostContent from "components/PostContent.tsx";
+import PostContent from "#/components/PostContent.tsx";
 import { useId } from "react";
 
 export const meta: MetaFunction = () => {

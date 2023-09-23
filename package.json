@@ -33,5 +33,12 @@
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "packageManager": "pnpm@8.7.5",
+  "imports": {
+    "#*": "./*"
   }
 }
