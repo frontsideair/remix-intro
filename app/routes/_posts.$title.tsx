@@ -19,9 +19,9 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function Posts() {
   const { title, posts } = useLoaderData<typeof loader>();
   return (
-    <main className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold">{title}</h2>
-      <ol className="flex flex-col gap-4">
+    <main>
+      <h2>{title}</h2>
+      <ol>
         {posts.map((post) => (
           <li key={post.id}>
             <PostContent post={post} />

@@ -11,15 +11,15 @@ import db from "#/app/db.server.ts";
 export default function Index() {
   const { postTitles } = useLoaderData<typeof loader>();
   return (
-    <main className="flex flex-col gap-4">
-      <h2 className="text-2xl">Most popular</h2>
-      <ul className="flex flex-col gap-2">
+    <main>
+      <h2>Most popular</h2>
+      <ul>
         {postTitles.map((postTitle) => (
           <li key={postTitle.title}>
-            {/* <a href={`/${postTitle.title}`} className="hover:underline">
+            {/* <a href={`/${postTitle.title}`} >
               {postTitle.title} ({postTitle._count.title})
             </a> */}
-            <Link to={`/${postTitle.title}`} className="hover:underline">
+            <Link to={`/${postTitle.title}`}>
               {postTitle.title} ({postTitle._count.title})
             </Link>
           </li>

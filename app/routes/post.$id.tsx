@@ -28,31 +28,23 @@ export default function Post() {
   const { state } = useNavigation();
 
   return (
-    <main className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold">{post.title}</h2>
+    <main>
+      <h2>{post.title}</h2>
       <PostContent post={post} />
       <hr />
       <Form method="POST">
-        <fieldset disabled={state !== "idle"} className="disabled:opacity-50">
+        <fieldset disabled={state !== "idle"}>
           <label>
             Edit post
             <textarea
               aria-describedby={id}
               name="content"
-              className="border w-full p-2"
               rows={5}
               defaultValue={post.content}
             />
-            <span id={id} className="text-red-500">
-              {actionData?.content}
-            </span>
+            <span id={id}>{actionData?.content}</span>
           </label>
-          <button
-            type="submit"
-            className="w-full border bg-slate-300 rounded py-1"
-          >
-            Update
-          </button>
+          <button type="submit">Update</button>
         </fieldset>
       </Form>
     </main>

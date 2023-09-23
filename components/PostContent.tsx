@@ -10,7 +10,7 @@ export default function PostContent({ post }: Props) {
   return (
     <article>
       <p>{post.content}</p>
-      <div className="text-sm text-right">
+      <div>
         <Link to={`/post/${post.id}`}>
           <time>{post.createdAt}</time>
         </Link>{" "}

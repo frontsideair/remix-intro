@@ -36,9 +36,9 @@ export default function Root() {
         <Meta />
         <Links />
       </head>
-      <body className="max-w-sm mx-auto px-4">
+      <body>
         <header>
-          <h1 className="text-4xl font-bold">Remix Starter</h1>
+          <h1>Remix Starter</h1>
         </header>
         <Outlet />
 
