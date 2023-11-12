@@ -8,12 +8,8 @@ import {
   isRouteErrorResponse,
   useRouteError,
 } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import bamboo from "bamboo.css";
-
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: bamboo }];
-};
+import type { MetaFunction } from "@remix-run/node";
+import "bamboo.css";
 
 export const meta: MetaFunction = () => {
   return [
@@ -43,8 +39,8 @@ export default function Root() {
         <Outlet />
 
         <ScrollRestoration />
-        <Scripts />
         <LiveReload />
+        <Scripts />
       </body>
     </html>
   );

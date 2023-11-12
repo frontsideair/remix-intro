@@ -4,8 +4,8 @@
   "sideEffects": false,
   "scripts": {
     "postinstall": "prisma db push",
-    "build": "remix build",
-    "dev": "remix dev",
+    "build": "vite build && vite build --ssr",
+    "dev": "vite dev",
     "start": "remix-serve build/index.js",
     "seed": "prisma db seed",
     "typecheck": "tsc",
@@ -31,7 +31,8 @@
     "eslint": "^8.47.0",
     "prisma": "^5.1.1",
     "tsx": "^3.12.10",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.5.0"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

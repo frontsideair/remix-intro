@@ -36,7 +36,7 @@ devDependencies:
     version: 8.0.2
   '@remix-run/dev':
     specifier: ^2.2.0
-    version: 2.2.0(@remix-run/serve@2.2.0)(@types/node@20.5.0)(typescript@5.1.6)
+    version: 2.2.0(@remix-run/serve@2.2.0)(@types/node@20.5.0)(typescript@5.1.6)(vite@4.5.0)
   '@remix-run/eslint-config':
     specifier: ^2.2.0
     version: 2.2.0(eslint@8.47.0)(react@18.2.0)(typescript@5.1.6)
@@ -61,6 +61,9 @@ devDependencies:
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
+  vite:
+    specifier: ^4.5.0
+    version: 4.5.0(@types/node@20.5.0)
 
 packages:
 
@@ -1145,7 +1148,7 @@ packages:
     resolution: {integrity: sha512-NV/4nVNWFZSJCCIA3HIFJbbDKO/NARc9ej0tX5S9k2EVbkrFJC4Xt9b0u4rNZWL4V+F5LAjvta8vzEUw0rw+HA==}
     requiresBuild: true
 
-  /@remix-run/dev@2.2.0(@remix-run/serve@2.2.0)(@types/node@20.5.0)(typescript@5.1.6):
+  /@remix-run/dev@2.2.0(@remix-run/serve@2.2.0)(@types/node@20.5.0)(typescript@5.1.6)(vite@4.5.0):
     resolution: {integrity: sha512-JtteMtYirQlj1Xf9FSLLjqO+owxlqJVsTESgVWdF+CR5kon2i12YjPnRx1xGtB4UGgU/yTZseMTPNhTKc5mwpQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1218,6 +1221,7 @@ packages:
       tsconfig-paths: 4.2.0
       typescript: 5.1.6
       undici: 5.27.2
+      vite: 4.5.0(@types/node@20.5.0)
       ws: 7.5.9
     transitivePeerDependencies:
       - '@types/node'
