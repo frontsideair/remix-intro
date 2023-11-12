@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import type { Post } from "@prisma/client";
 import type { SerializeFrom } from "@remix-run/node";
+import DateTime from "#/components/DateTime.tsx";
 
 type Props = {
   post: SerializeFrom<Post>;
@@ -9,10 +10,10 @@ type Props = {
 export default function PostContent({ post }: Props) {
   return (
     <article>
-      <p>{post.content}</p>
+      <p style={{ whiteSpace: "pre-wrap" }}>{post.content}</p>
       <div>
         <Link to={`/post/${post.id}`}>
-          <time>{post.createdAt}</time>
+          <DateTime date={new Date(post.createdAt)} />
         </Link>{" "}
         &middot; <span>{post.author}</span>
       </div>

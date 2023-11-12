@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -34,7 +35,9 @@ export default function Root() {
       </head>
       <body>
         <header>
-          <h1>Remix Starter</h1>
+          <h1>
+            <Link to="/">Remix Starter</Link>
+          </h1>
         </header>
         <Outlet />
 
