@@ -28,7 +28,7 @@ pnpm run dev
 
 - `package.json`: proje bağımlılıkları ve önemli script'ler
 - `prisma/schema.prisma`: veritabanı şeması
-- `prisma/seed.ts`: veritabanına örnek veri doldurmak için script
+- `prisma/seed.js`: veritabanına örnek veri doldurmak için script
 - `app/root.tsx`: projenin giriş noktası
 - `app/routes/_index.tsx`: başlıklar listesi sayfası
 - `app/routes/_posts.$title.tsx`: başlık sayfası

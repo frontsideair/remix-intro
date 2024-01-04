@@ -1,3 +1,5 @@
+// @ts-check
+
 import { PrismaClient } from "@prisma/client";
 import { faker } from "@faker-js/faker";
 
@@ -7,7 +9,7 @@ async function seed() {
   await db.post.deleteMany({});
 
   const titles = Array.from({ length: 10 }, () =>
-    faker.lorem.words({ min: 3, max: 10 })
+    faker.lorem.words({ min: 3, max: 10 }),
   );
 
   for (const title of titles) {
@@ -24,4 +26,4 @@ async function seed() {
   return;
 }
 
-seed();
+await seed();
