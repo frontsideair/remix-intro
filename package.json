@@ -4,18 +4,18 @@
   "sideEffects": false,
   "scripts": {
     "postinstall": "prisma db push",
-    "build": "vite build && vite build --ssr",
-    "dev": "vite dev",
-    "start": "remix-serve build/index.js",
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js",
     "seed": "prisma db seed",
     "typecheck": "tsc",
     "lint": "eslint"
   },
   "dependencies": {
     "@prisma/client": "^5.1.1",
-    "@remix-run/node": "^2.2.0",
-    "@remix-run/react": "^2.2.0",
-    "@remix-run/serve": "^2.2.0",
+    "@remix-run/node": "^2.4.1",
+    "@remix-run/react": "^2.4.1",
+    "@remix-run/serve": "^2.4.1",
     "bamboo.css": "^1.3.11",
     "isbot": "^3.7.0",
     "react": "^18.2.0",
@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@remix-run/dev": "^2.2.0",
-    "@remix-run/eslint-config": "^2.2.0",
+    "@remix-run/dev": "^2.4.1",
+    "@remix-run/eslint-config": "^2.4.1",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
@@ -32,7 +32,7 @@
     "prisma": "^5.1.1",
     "tsx": "^3.12.10",
     "typescript": "^5.1.6",
-    "vite": "^4.5.0"
+    "vite": "^5.0.10"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
