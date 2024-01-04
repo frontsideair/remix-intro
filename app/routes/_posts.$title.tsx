@@ -1,8 +1,8 @@
 import db from "#/app/db.server.ts";
 import {
   json,
-  type DataFunctionArgs,
   type MetaFunction,
+  type LoaderFunctionArgs,
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import PostContent from "#/components/PostContent.tsx";
@@ -32,7 +32,7 @@ export default function Posts() {
   );
 }
 
-export async function loader({ params }: DataFunctionArgs) {
+export async function loader({ params }: LoaderFunctionArgs) {
   const posts = await db.post.findMany({
     where: {
       title: params.title,

@@ -1,6 +1,10 @@
 import db from "#/app/db.server.ts";
 import { redirect, json } from "@remix-run/node";
-import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
+import type {
+  ActionFunctionArgs,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
 import {
   Form,
   useActionData,
@@ -51,7 +55,7 @@ export default function Post() {
   );
 }
 
-export async function loader({ params }: DataFunctionArgs) {
+export async function loader({ params }: LoaderFunctionArgs) {
   const post = await db.post.findUnique({
     where: {
       id: Number.parseInt(params.id!, 10),
@@ -65,7 +69,7 @@ export async function loader({ params }: DataFunctionArgs) {
   return { post };
 }
 
-export async function action({ params, request }: DataFunctionArgs) {
+export async function action({ params, request }: ActionFunctionArgs) {
   const { id } = params;
   const formData = await request.formData();
   const content = formData.get("content") as string;
