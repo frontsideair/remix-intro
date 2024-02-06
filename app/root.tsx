@@ -1,7 +1,6 @@
 import {
   Link,
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -42,7 +41,6 @@ export default function Root() {
         <Outlet />
 
         <ScrollRestoration />
-        <LiveReload />
         <Scripts />
       </body>
     </html>
