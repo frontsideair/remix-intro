@@ -28,8 +28,11 @@ export const meta: MetaFunction = () => {
 export default function Post() {
   const { post } = useLoaderData<typeof loader>();
   const actionData = useActionData<typeof action>();
-  const id = useId();
   const { state } = useNavigation();
+  const id = useId();
+  const inputId = `input-${id}`;
+  const descriptionId = `description${id}`;
+  const busy = state !== "idle";
 
   return (
     <main>
@@ -37,19 +40,18 @@ export default function Post() {
       <PostContent post={post} />
       <hr />
       <Form method="POST">
-        <fieldset disabled={state !== "idle"}>
-          <label>
-            Edit post
-            <textarea
-              aria-describedby={id}
-              name="content"
-              rows={5}
-              defaultValue={post.content}
-            />
-            <span id={id}>{actionData?.content}</span>
-          </label>
-          <button type="submit">Update</button>
-        </fieldset>
+        <label htmlFor={inputId}>Edit post</label>
+        <textarea
+          id={inputId}
+          aria-describedby={descriptionId}
+          name="content"
+          rows={5}
+          defaultValue={post.content}
+        />
+        <span id={descriptionId}>{actionData?.content}</span>
+        <button type={busy ? "button" : "submit"} aria-disabled={busy}>
+          Update
+        </button>
       </Form>
     </main>
   );

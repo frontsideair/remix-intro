@@ -8,8 +8,8 @@ import {
   isRouteErrorResponse,
   useRouteError,
 } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
-import "bamboo.css";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import waterCss from "water.css?url";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,6 +17,10 @@ export const meta: MetaFunction = () => {
     { name: "description", content: "Welcome to remix!" },
   ];
 };
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: waterCss },
+];
 
 /** topics
   - fs based routing
