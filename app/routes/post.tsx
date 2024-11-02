@@ -5,12 +5,7 @@ import type {
   LoaderFunctionArgs,
   MetaFunction,
 } from "react-router";
-import {
-  Form,
-  useActionData,
-  useLoaderData,
-  useNavigation,
-} from "react-router";
+import { Form, useNavigation } from "react-router";
 import PostContent from "#/components/PostContent.tsx";
 import { useId } from "react";
 import type * as Route from "./+types.post";
