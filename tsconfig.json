@@ -1,31 +1,24 @@
 {
-  "include": [
-    "env.d.ts",
-    "**/*.js",
-    "**/*.ts",
-    "**/*.tsx",
-    ".react-router/types/**/*"
-  ],
+  "include": ["**/*.js", "**/*.ts", "**/*.tsx", ".react-router/types/**/*"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["@react-router/node", "vite/client"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "moduleDetection": "force",
     "resolveJsonModule": true,
     "target": "ES2022",
     "strict": true,
     "allowJs": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
     "paths": {
       "#*": ["./*"]
     },
-    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
-
-    // Remix takes care of building everything in `remix build`.
     "noEmit": true,
     "rootDirs": [".", "./.react-router/types"],
     "plugins": [{ "name": "@react-router/dev" }]
