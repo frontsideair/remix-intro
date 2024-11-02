@@ -12,25 +12,25 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@prisma/client": "^5.10.2",
-    "@react-router/node": "7.0.0-pre.1",
-    "@react-router/serve": "7.0.0-pre.1",
+    "@prisma/client": "^5.21.1",
+    "@react-router/node": "7.0.0-pre.4",
+    "@react-router/serve": "7.0.0-pre.4",
     "isbot": "^5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "7.0.0-pre.1",
+    "react-router": "7.0.0-pre.4",
     "water.css": "^2.1.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.3.1",
-    "@react-router/dev": "7.0.0-pre.1",
-    "@types/node": "^20.11.19",
-    "@types/react": "^18.3.11",
+    "@faker-js/faker": "^8.4.1",
+    "@react-router/dev": "7.0.0-pre.4",
+    "@types/node": "^20.17.5",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "eslint": "^8.56.0",
-    "prisma": "^5.10.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.4.9"
+    "eslint": "^8.57.1",
+    "prisma": "^5.21.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
   },
   "prisma": {
     "seed": "node prisma/seed.js"

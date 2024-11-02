@@ -1,5 +1,5 @@
 import db from "#/app/db.server.ts";
-import { redirect, json } from "react-router";
+import { redirect } from "react-router";
 import type {
   ActionFunctionArgs,
   LoaderFunctionArgs,
@@ -72,7 +72,7 @@ export async function action({ params, request }: ActionFunctionArgs) {
   const content = formData.get("content") as string;
 
   if (content === "") {
-    return json({ content: "Content cannot be empty" });
+    return { content: "Content cannot be empty" };
   }
 
   await db.post.update({
