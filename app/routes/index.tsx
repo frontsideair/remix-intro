@@ -1,6 +1,6 @@
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link } from "react-router";
 import db from "#/app/db.server.ts";
+import type * as Route from "./+types.index";
 
 /** topics
   - loader
@@ -8,8 +8,8 @@ import db from "#/app/db.server.ts";
   - progressively enhanced links
   - standard response
 */
-export default function Index() {
-  const { postTitles } = useLoaderData<typeof loader>();
+export default function Index({ loaderData }: Route.ComponentProps) {
+  const { postTitles } = loaderData;
   return (
     <main>
       <h2>Most popular</h2>
@@ -48,5 +48,5 @@ export async function loader() {
   //   },
   // });
 
-  return json({ postTitles });
+  return { postTitles };
 }

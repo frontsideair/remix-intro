@@ -1,18 +1,19 @@
 import db from "#/app/db.server.ts";
-import { redirect, json } from "@remix-run/node";
+import { redirect, json } from "react-router";
 import type {
   ActionFunctionArgs,
   LoaderFunctionArgs,
   MetaFunction,
-} from "@remix-run/node";
+} from "react-router";
 import {
   Form,
   useActionData,
   useLoaderData,
   useNavigation,
-} from "@remix-run/react";
+} from "react-router";
 import PostContent from "#/components/PostContent.tsx";
 import { useId } from "react";
+import type * as Route from "./+types.post";
 
 export const meta: MetaFunction = () => {
   return [{ title: "Post" }];
@@ -25,9 +26,8 @@ export const meta: MetaFunction = () => {
   - validation
   - make it fast with js
 */
-export default function Post() {
-  const { post } = useLoaderData<typeof loader>();
-  const actionData = useActionData<typeof action>();
+export default function Post({ loaderData, actionData }: Route.ComponentProps) {
+  const { post } = loaderData;
   const { state } = useNavigation();
   const id = useId();
   const inputId = `input-${id}`;

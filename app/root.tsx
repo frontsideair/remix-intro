@@ -7,8 +7,8 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useRouteError,
-} from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+} from "react-router";
+import type { LinksFunction, MetaFunction } from "react-router";
 import waterCss from "water.css?url";
 
 export const meta: MetaFunction = () => {

@@ -1,6 +1,6 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import type { Post } from "@prisma/client";
-import type { SerializeFrom } from "@remix-run/node";
+import type { SerializeFrom } from "#node_modules/react-router/dist/lib/dom/ssr/components";
 import DateTime from "#/components/DateTime.tsx";
 
 type Props = {

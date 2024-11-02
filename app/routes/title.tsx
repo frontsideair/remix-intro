@@ -1,14 +1,11 @@
 import db from "#/app/db.server.ts";
-import {
-  json,
-  type MetaFunction,
-  type LoaderFunctionArgs,
-} from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { type MetaFunction } from "react-router";
 import PostContent from "#/components/PostContent.tsx";
+import type * as Route from "./+types.title";
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  return [{ title: data?.title ?? "Posts" }];
+export const meta: MetaFunction = (data) => {
+  const { title } = data.data as Route.LoaderData;
+  return [{ title: title ?? "Posts" }];
 };
 
 /** topics
@@ -16,8 +13,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   - params
   - throw 404
 */
-export default function Posts() {
-  const { title, posts } = useLoaderData<typeof loader>();
+export default function Posts({ loaderData }: Route.ComponentProps) {
+  const { title, posts } = loaderData;
   return (
     <main>
       <h2>{title}</h2>
@@ -32,7 +29,7 @@ export default function Posts() {
   );
 }
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function loader({ params }: Route.LoaderArgs) {
   const posts = await db.post.findMany({
     where: {
       title: params.title,
@@ -42,6 +39,6 @@ export async function loader({ params }: LoaderFunctionArgs) {
   if (posts.length === 0) {
     throw new Response(null, { status: 404, statusText: "Not Found" });
   } else {
-    return json({ title: params.title, posts });
+    return { title: params.title, posts };
   }
 }
