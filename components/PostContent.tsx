@@ -1,7 +1,8 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import type { Post } from "@prisma/client";
-import type { SerializeFrom } from "#node_modules/react-router/dist/lib/dom/ssr/components";
 import DateTime from "#/components/DateTime.tsx";
+
+type SerializeFrom<T> = ReturnType<typeof useLoaderData<T>>;
 
 type Props = {
   post: SerializeFrom<Post>;

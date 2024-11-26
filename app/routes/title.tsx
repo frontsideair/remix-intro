@@ -1,10 +1,10 @@
 import db from "#/app/db.server.ts";
 import { type MetaFunction } from "react-router";
 import PostContent from "#/components/PostContent.tsx";
-import type * as Route from "./+types.title";
+import type { Route } from "./+types/title";
 
-export const meta: MetaFunction = (data) => {
-  const { title } = data.data as Route.LoaderData;
+export const meta: Route.MetaFunction = (data) => {
+  const { title } = data.data;
   return [{ title: title ?? "Posts" }];
 };
 

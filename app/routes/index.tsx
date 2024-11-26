@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import db from "#/app/db.server.ts";
-import type * as Route from "./+types.index";
+import type { Route } from "./+types/index";
 
 /** topics
   - loader

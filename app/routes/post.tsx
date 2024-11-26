@@ -8,7 +8,7 @@ import type {
 import { Form, useNavigation } from "react-router";
 import PostContent from "#/components/PostContent.tsx";
 import { useId } from "react";
-import type * as Route from "./+types.post";
+import type { Route } from "./+types/post";
 
 export const meta: MetaFunction = () => {
   return [{ title: "Post" }];
@@ -84,5 +84,5 @@ export async function action({ params, request }: ActionFunctionArgs) {
     },
   });
 
-  return redirect(`/post/${id}`);
+  throw redirect(`/post/${id}`);
 }
